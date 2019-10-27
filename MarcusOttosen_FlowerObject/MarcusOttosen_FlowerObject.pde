@@ -5,7 +5,7 @@ Flower myFlower3;
 void setup() {
   size(1600, 1200);
 
-  int _r1= 60;
+  int _r1= 160;
   int _r2 = 100;
   int _r3 = 120;
   int _petals=7;
@@ -22,15 +22,12 @@ void setup() {
 
 void draw() {
   background(#43AF76);
+  if (myFlower1.overlaps(myFlower3)) {
+    background(200);
+  }
 
-  myFlower1.display();
-  myFlower1.move(/*2*/);  //Denne løsning virkede ikke da den i draw hele tiden satte valuen af blomstens speed tilbage til 2 selv når den nåede til hvor den skulle "bounce", altså reverse sin speed.
-  myFlower1.bounce();
+  myFlower1.display(); //Shows the flower
   myFlower2.display();
-  myFlower2.move(/*5*/);
-  myFlower2.bounce();
   myFlower3.display();
-  myFlower3.move(/*7*/);
-  myFlower3.bounce();
   //myFlower3.coloring();
 }

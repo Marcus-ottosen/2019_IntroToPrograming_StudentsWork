@@ -31,20 +31,24 @@ class Flower {
     }
     fill(200, 0, 0);
     ellipse(x, y, r*1.2, r*1.2);
+    move(); //Kan også være i FlowerObject som f.eks myFlower1.move();
+    bounce(); //Kan også være i FlowerObject som f.eks. myFlower2.bounce();
   }
   void move(/*float speed*/) {
-
     x = x + speed;
   }
+
   void bounce() {
     if (x > width-r || x < r || y > height || y < 0) {
       speed = speed * (-1);
     }
   }
-  void coloring() {
-    if (x > width-r || x < r || y > height || y < 0) {
-      fill(0,0,255);
-      ellipse(x, y, r*1.2, r*1.2);
+
+  boolean overlaps(Flower someOtherCrazyFlower) { // finder ud af om 2 flowers rammer hinanden. ikke helt perfekt!
+    if (dist (x, y, someOtherCrazyFlower.x, someOtherCrazyFlower.y)<(2.2*(r+someOtherCrazyFlower.r))) {
+      return true;
+    } else {
+      return false;
     }
   }
 }

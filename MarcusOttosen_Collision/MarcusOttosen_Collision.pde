@@ -14,7 +14,7 @@ void setup() {
   for (int i = 0; i < cars.length; i++) {   // Creates 2 cars
     cars[i] = new Car();
   }
-  myPlayer= new Player();
+  myPlayer= new Player(); // dfs
 }
 
 void draw() {
